@@ -160,116 +160,211 @@
 					</div>
 				</header>
 				<div class="inner">
-					<div class="referral">
-						<div class="referral__container">
-							<div class="referral__body">
-								<section class="referral__main main-referral">
-									<div class="main-referral__body">
-										<h2 class="main-referral__lable wallet-title">
-											<span>5%</span>
-											суммы депозита
-										</h2>
-										<p class="main-referral__text">Каждый зарегистрированный участник может
-											воспользоваться своей реферальной ссылкой для приглашения партнеров и
-											получать вознаграждения от первоначального депозита Вашего реферала.</p>
-										<div class="main-referral__input">
-											<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="cip.io/ref5562" class="input">
-											<button type="submit" class="main-referral__copy">
-												<img data-src="img/svg/copy.svg" alt="">
-											</button>
-										</div>
+					<div class="deposit-details">
+						<div class="deposit-details__container">
+							<div class="deposit-details__body">
+								<div class="deposit-details__title title-deposit-details">
+									<a href="../open-deposit.html" class="title-deposit-details__back">
+										<img data-src="img/svg/arrow-left.svg" alt="">
+										<h2 class="wallet-title">7 дней</h2>
+									</a>
+									<div class="title-deposit-details__links">
+										<a href="" class="title-deposit-details__open-btn _icon-plus h3 hover button">Открыть
+											ещё
+											депозит</a>
+										<button type="button" data-popup="#popup-complete-early" class="title-deposit-details__close-btn h3 hover button">Досрочно
+											завершить</button>
 									</div>
-								</section>
-								<section class="figures-refferral">
-									<div class="figures-refferral__container">
-										<div class="figures-refferral__body">
-											<div class="figures-refferral__top">
-												<h4 class="figures-refferral__title h4">в цифрах</h4>
-											</div>
-											<div class="figures-refferral__row">
-												<!-- <div class="figures-refferral__column button">
-                                                    <div class="figures-refferral__block">
-                                                        <div class="figures-refferral__value _icon-rubl"">183 760</div>
-                                                        <div class=" figures-refferral__span h3">Всего пополнено</div>
+								</div>
+								<div class="deposit-details__content content-deposit-details">
+									<div class="content-deposit-details__main">
+										<div class="content-deposit-details__graphic">
+											<canvas id="myChart"></canvas>
+											<!-- <div data-tabs class="enter-content-calculator__body">
+                                                <div data-tabs-body class="enter-content-calculator__tabs-body">
+                                                    <div class="enter-content-calculator__value">
+                                                        <div class="enter-content-calculator__row">
+                                                            <span class="input-title">Укажите сумму для открытия
+                                                                депозита</span>
+                                                            <span class="input-title _grey">от 100 ₽ до 200 000 ₽</span>
+                                                        </div>
+                                                        <input autocomplete="off" type="text" name="form[]"
+                                                            data-error="Ошибка" placeholder="100 ₽" class="input">
                                                     </div>
-                                                    <div class="figures-refferral__image"><img src="img/figures-refferral/01.svg" alt="">
+                                                    <div class="enter-content-calculator__value">
+                                                        <div class="enter-content-calculator__row">
+                                                            <span class="input-title">Укажите сумму для открытия
+                                                                депозита</span>
+                                                            <span class="input-title _grey">от 100 ₽ до 200 000 ₽</span>
+                                                        </div>
+                                                        <input autocomplete="off" type="text" name="form[]"
+                                                            data-error="Ошибка" placeholder="200 ₽" class="input">
                                                     </div>
+                                                    <div class="enter-content-calculator__value">
+                                                        <div class="enter-content-calculator__row">
+                                                            <span class="input-title">Укажите сумму для открытия
+                                                                депозита</span>
+                                                            <span class="input-title _grey">от 100 ₽ до 200 000 ₽</span>
+                                                        </div>
+                                                        <input autocomplete="off" type="text" name="form[]"
+                                                            data-error="Ошибка" placeholder="300 ₽" class="input">
+                                                    </div>
+                                                    <div class="enter-content-calculator__value">
+                                                        <div class="enter-content-calculator__row">
+                                                            <span class="input-title">Укажите сумму для открытия
+                                                                депозита</span>
+                                                            <span class="input-title _grey">от 100 ₽ до 200 000 ₽</span>
+                                                        </div>
+                                                        <input autocomplete="off" type="text" name="form[]"
+                                                            data-error="Ошибка" placeholder="400 ₽" class="input">
+                                                    </div>
+                                                </div>
+                                                <div class="enter-content-calculator__inner">
+                                                    <div class="tabs-cards-bind__lable">
+                                                        <h3 class="input-title">Способ оплаты</h3>
+                                                    </div>
+                                                    <nav data-tabs-titles class="tabs-cards-bind__navigation">
+                                                        <button type="button"
+                                                            class="tabs-cards-bind__title profile-title _tab-active hover-card">
+                                                            <div class="tabs-cards-bind__image">
+                                                                <img data-src="img/svg/bank-card.svg" alt="">
+                                                            </div>
+                                                            <h3 class="input-title">Карта</h3>
+                                                        </button>
+                                                        <button type="button"
+                                                            class="tabs-cards-bind__title profile-title">
+                                                            <div class="tabs-cards-bind__image">
+                                                                <img data-src="img/svg/perfect.svg" alt="">
+                                                            </div>
+                                                            <h3 class="input-title">PerfectMoney</h3>
+                                                        </button>
+                                                        <button type="button"
+                                                            class="tabs-cards-bind__title profile-title">
+                                                            <div class="tabs-cards-bind__image">
+                                                                <img data-src="img/svg/cripto.svg" alt="">
+                                                            </div>
+                                                            <h3 class="input-title">Криптовалюта</h3>
+                                                        </button>
+                                                        <button type="button"
+                                                            class="tabs-cards-bind__title profile-title">
+                                                            <div class="tabs-cards-bind__image">
+                                                                <img data-src="img/svg/yoomoney.svg" alt="">
+                                                            </div>
+                                                            <h3 class="input-title">ЮMoney</h3>
+                                                        </button>
+                                                    </nav>
+                                                </div>
+                                                <a href="../payment-request.html"
+                                                    class="enter-content-calculator__button button h3 hover">Перейти к
+                                                    оплате</a>
+                                            </div> -->
+										</div>
+										<div class="content-calculator__banner banner-content-calculator">
+											<div class="banner-content-calculator__body">
+												<!-- <div class="banner-content-calculator__section">
+                                                    <span class="input-title">Вклад</span>
+                                                    <h3 class="banner-content-calculator__lable-main">7 дней</h3>
+                                                    <img class="banner-content-calculator__image"
+                                                        data-src="img/open-deposit/banner/01.svg" alt="">
                                                 </div> -->
-												<div class="figures-refferral__column button">
-													<div class="figures-refferral__block">
-														<div class="figures-refferral__value _icon-rubl"">183 760</div>
-                                                        <div class=" figures-refferral__span">Доход с рефералов</div>
-													</div>
-													<div class="figures-refferral__image"><img src="img/figures/01.svg" alt="">
-													</div>
+												<div class="banner-content-calculator__section">
+													<span class="input-title">Начисленная прибыль</span>
+													<h3 class="banner-content-calculator__lable _green">+65.00 ₽</h3>
+													<img class="banner-content-calculator__image" data-src="img/open-deposit/banner/02.svg" alt="">
 												</div>
-												<div class="figures-refferral__column button">
-													<div class="figures-refferral__block">
-														<div class="figures-refferral__value">8 192</div>
-														<div class=" figures-refferral__span">Всего уникальных переходов
-														</div>
-													</div>
-													<div class="figures-refferral__image"><img src="img/svg/arrow-refferal.svg" alt="">
-													</div>
+												<div class="banner-content-calculator__section">
+													<span class="input-title">Сумма на выходе</span>
+													<h3 class="banner-content-calculator__lable">5065.00 ₽</h3>
+													<img class="banner-content-calculator__image" data-src="img/open-deposit/banner/03.svg" alt="">
 												</div>
-												<div class="figures-refferral__column button">
-													<div class="figures-refferral__block">
-														<div class="figures-refferral__value">375</div>
-														<div class=" figures-refferral__span">Всего рефералов</div>
-													</div>
-													<div class="figures-refferral__image"><img src="img/figures/04.svg" alt="">
-													</div>
-												</div>
-												<div class="figures-refferral__column button">
-													<div class="figures-refferral__block">
-														<div class="figures-refferral__value">219</div>
-														<div class=" figures-refferral__span">Всего активных рефералов
-														</div>
-													</div>
-													<div class="figures-refferral__image"><img src="img/figures/04.svg" alt="">
-													</div>
+												<div class="banner-content-calculator__section">
+													<span class="input-title">Дата окончания депозита</span>
+													<h3 class="banner-content-calculator__lable">30.11.2022 в 18:30 МСК
+													</h3>
 												</div>
 											</div>
 										</div>
 									</div>
-								</section>
-								<section class="referral__your your-referral">
-									<div class="your-referral__body">
-										<div class="your-referral__header">
-											<h4 class="profile-title">Ваши рефералы</h4>
-										</div>
-										<div class="your-referral__content">
-											<div class="your-referral__span">
-												<img data-src="img/refferals/group.svg" alt="">
-												<p class="profile-title">У вас пока нет рефералов</p>
+									<div class="content-deposit-details__list">
+										<div class="list-deposits__main main-list-deposits">
+											<div class="main-list-deposits__header header-list-deposits">
+												<button type="button" class="header-list-deposits__data _filter-header-item">
+													Дата
+													<img data-src="img/svg/filter.svg" alt="">
+												</button>
+												<button type="button" class="header-list-deposits__earned-b _filter-header-item">
+													Заработано
+													<img data-src="img/svg/filter.svg" alt="">
+												</button>
+												<button type="button" class="header-list-deposits__rate _filter-header-item">
+													ставка
+													<img data-src="img/svg/filter.svg" alt="">
+												</button>
+											</div>
+											<div class="main-list-deposits__content content-main-list">
+												<div class="content-main-list__item-b">
+													<div class="content-main-list__data input-title">29 ноября в 12:00
+													</div>
+													<div class="content-main-list__earned-b input-title _green">+ 1
+														000.00 ₽
+													</div>
+													<div class="content-main-list__rate input-title">1.5%</div>
+												</div>
+												<div class="content-main-list__item-b">
+													<div class="content-main-list__data input-title">29 ноября в 12:00
+													</div>
+													<div class="content-main-list__earned-b input-title _green">+ 1
+														000.00 ₽
+													</div>
+													<div class="content-main-list__rate input-title">1.5%</div>
+												</div>
+												<div class="content-main-list__item-b">
+													<div class="content-main-list__data input-title">29 ноября в 12:00
+													</div>
+													<div class="content-main-list__earned-b input-title _green">+ 1
+														000.00 ₽
+													</div>
+													<div class="content-main-list__rate input-title">1.5%</div>
+												</div>
+												<div class="content-main-list__item-b">
+													<div class="content-main-list__data input-title">29 ноября в 12:00
+													</div>
+													<div class="content-main-list__earned-b input-title _green">+ 1
+														000.00 ₽
+													</div>
+													<div class="content-main-list__rate input-title">1.5%</div>
+												</div>
+												<div class="content-main-list__item-b">
+													<div class="content-main-list__data input-title">29 ноября в 12:00
+													</div>
+													<div class="content-main-list__earned-b input-title _green">+ 1
+														000.00 ₽
+													</div>
+													<div class="content-main-list__rate input-title">1.5%</div>
+												</div>
+												<div class="content-main-list__item-b">
+													<div class="content-main-list__data input-title">29 ноября в 12:00
+													</div>
+													<div class="content-main-list__earned-b input-title _green">+ 1
+														000.00 ₽
+													</div>
+													<div class="content-main-list__rate input-title">1.5%</div>
+												</div>
+											</div>
+											<div class="main-list-deposits__footer footer-main-list">
+												<button type="button" class="footer-main-list__button button hover h3">Показать
+													ещё</button>
+												<div class="footer-main-list__items">
+													<a href="" class="footer-main-list__item h2 hover _active">1</a>
+													<a href="" class="footer-main-list__item h2 hover">2</a>
+													<a href="" class="footer-main-list__item h2 hover">3</a>
+													<a href="" class="footer-main-list__item h2 hover">4</a>
+													<a href="" class="footer-main-list__item h2 hover">5</a>
+												</div>
 											</div>
 										</div>
 									</div>
-									<div class="your-referral__banner">
-										<a href="" class="your-referral__logo">
-											<img data-src="img/logo.svg" alt="">
-										</a>
-										<h2 class="your-referral__title">Промо-материалы
-											для приглашения
-											партнёров/ </h2>
-										<button data-popup="#popup-promo" type="button" class="your-referral__button button hover h3">Перейти к
-											материалам
-											<img data-src="img/svg/arrow-right.svg" alt="">
-										</button>
-									</div>
-								</section>
-								<!-- <div class="referral__numbers numbers-referral">
-                                    <h4 class="numbers-referral__title h4">в цифрах</h4>
-                                    <div class="numbers-referral__row">
-                                        <div class="numbers-referral__column">
-                                            <div class="numbers-referral__block">
-                                                <div class="numbers-referral__value _icon-rubl">183 760</div>
-                                                <p class="numbers-referral__text">Доход с рефералов</p>
-                                            </div>
-                                            <picture><source data-srcset="img" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img" alt=""></picture>
-                                        </div>
-                                    </div>
-                                </div> -->
+								</div>
 							</div>
 						</div>
 					</div>
@@ -790,6 +885,75 @@
 		</div>
 	</div>
 	<script src="js/app.min.js?_v=20221212183614"></script>
+	<div id="popup-complete-early" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/svg/close-popap.svg" alt="">
+				</button>
+				<div class="popup__text">
+					<form action="#" class="complete-early">
+						<div class="complete-early__image">
+							<picture><source srcset="img/deposit-details/01.webp" type="image/webp"><img src="img/deposit-details/01.png" alt=""></picture>
+						</div>
+						<div class="complete-early__text h2">Будет списана комиссия за досрочное
+							завершение вклада с вашего баланса</div>
+						<div class="complete-early__comision">
+							<h4 class="input-title">Комиссия:</h4>
+							<span class="complete-early__value">250 ₽</span>
+						</div>
+						<div class="complete-early__buttons">
+							<button type="submit" class="complete-early__button button _red">Да, закрыть вклад</button>
+							<button type="submit" class="complete-early__button button">Нет, я передумал(а)</button>
+						</div>
+					</form>
+					<!-- <div class="reset-password">
+                    <div class="reset-password__top top-reset-password">
+                        <h2 class="top-reset-password__title profile-title">Изменение телефона</h2>
+                    </div>
+                    <form action="#" class="reset-password__content content-reset-password">
+                        <div class="content-reset-password__row">
+                            <h3 class="content-reset-password__title input-title">Телефон</h3>
+                            <div class="content-reset-password__line">
+                                <input autocomplete="off" type="password" name="form[]" data-error="Ошибка"
+                                    placeholder="Введите телефон" class="content-reset-password__input input hover">
+                                <button type="button" class="content-reset-password__viewpass _icon-eye">
+                                </button>
+                            </div>
+                        </div>
+                        <button data-popup="#popup-code" type="button"
+                            class="content-reset-password__button button h3 hover">Позвонить</button>
+                    </form>
+                </div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js?_v=20221212183614"></script>
+	<script>
+		const ctx = document.getElementById('myChart').getContext('2d');
+		new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00'],
+				datasets: [{
+					label: 'My First Chart Title',
+					data: [5, 6, 5, 4, 4, 6, 7, 6, 5, 7, 7],
+					borderWidth: 5,
+					cubicInterpolationMode: 'monotone',
+					fill: true,
+					// backgroundColor: 'green',
+				}]
+			},
+			options: {
+				scales: {
+					y: {
+						beginAtZero: true
+					}
+				}
+			},
+		});
+	</script>
 </body>
 
 </html>
