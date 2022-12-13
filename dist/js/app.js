@@ -1337,13 +1337,10 @@
             document.querySelector(".menu").classList.toggle("header-menu-close");
             if (document.querySelector(".menu").classList.contains("header-menu-close")) document.querySelector(".header__button").classList.add("header-link-close"); else document.querySelector(".header__button").classList.remove("header-link-close");
         };
-        const myopt = document.querySelectorAll(".auth-content-reset__part");
-        for (var i = 0; i < myopt.length - 1; i++) myopt[i].addEventListener("keyup", (function() {
-            this.nextElementSibling.focus();
-        }));
         const ALLOW_LIST = new Set([ "Backspace", "ArrowLeft", "ArrowRight", "Tab", "Enter", "ArrowDown", "ArrowUp" ]);
         (() => {
             const partSelector = ".input-part-focus";
+            const authSelector = ".input-auth-focus";
             document.querySelectorAll(partSelector).forEach((domInput => domInput.addEventListener("keydown", (e => {
                 if ((e.key <= "0" || "9" <= e.key) && !ALLOW_LIST.has(e.code)) {
                     e.preventDefault();
@@ -1354,6 +1351,20 @@
                     if ("input" === previousSibling?.tagName?.toLowerCase()) previousSibling.focus();
                 }
                 if (4 === e.target.value.length && !(e.key <= "0" || "9" <= e.key) || "ArrowRight" === e.code && e.target.selectionEnd === e.target.value.length) {
+                    const nextSibling = e.target.nextElementSibling;
+                    if ("input" === nextSibling?.tagName?.toLowerCase()) nextSibling.focus();
+                }
+            }))));
+            document.querySelectorAll(authSelector).forEach((domInput => domInput.addEventListener("keydown", (e => {
+                if ((e.key <= "0" || "9" <= e.key) && !ALLOW_LIST.has(e.code)) {
+                    e.preventDefault();
+                    return false;
+                }
+                if (!e.target.value && "Backspace" === e.code || ("ArrowLeft" === e.code || "Backspace" === e.code) && 0 === e.target.selectionStart) {
+                    const previousSibling = e.target.previousElementSibling;
+                    if ("input" === previousSibling?.tagName?.toLowerCase()) previousSibling.focus();
+                }
+                if (1 === e.target.value.length && !(e.key <= "0" || "9" <= e.key) || "ArrowRight" === e.code && e.target.selectionEnd === e.target.value.length) {
                     const nextSibling = e.target.nextElementSibling;
                     if ("input" === nextSibling?.tagName?.toLowerCase()) nextSibling.focus();
                 }

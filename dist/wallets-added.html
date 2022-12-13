@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20221212183614">
+	<link rel="stylesheet" href="css/style.min.css?_v=20221213130308">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
 <body>
 	<div class="wrapper">
 		<main class="page">
-			<section class="menu">
+			<div class="menu">
 				<div class="menu__header header-menu">
 					<a href="" class="header-menu__logo"><img src="img/logo.svg" alt="">
 						<span>Кабинет</span>
@@ -40,10 +40,10 @@
 								</a>
 							</li>
 							<li class="body-content-menu__item">
-								<a href="" class="body-content-menu__link h2">
+								<button type="button" data-popup="#popup-withdrawal" class="body-content-menu__link h2">
 									<img src="img/menu/03.svg" alt="">
 									<span>Вывод средств</span>
-								</a>
+								</button>
 							</li>
 							<li class="body-content-menu__item">
 								<a href="" class="body-content-menu__link h2">
@@ -112,7 +112,7 @@
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 			<section class="content">
 				<header class="header">
 					<div class="header__body">
@@ -374,12 +374,8 @@
 				</div>
 			</section>
 		</main>
-		<footer class="footer">
-			<div class="footer__container">
-			</div>
-		</footer>
 	</div>
-	<div id="popup-code" aria-hidden="true" class="popup">
+	<div id="popup-withdrawal" aria-hidden="true" class="popup">
 		<div class="popup__wrapper">
 			<div class="popup__content">
 				<button data-close type="button" class="popup__close">
@@ -388,137 +384,112 @@
 				<div class="popup__text">
 					<div class="reset-password">
 						<div class="reset-password__top top-reset-password">
-							<h2 class="top-reset-password__title profile-title">Изменение пароля</h2>
+							<h2 class="top-reset-password__title profile-title">Вывод средств</h2>
 						</div>
-						<form action="#" class="reset-password__content content-reset-password">
-							<div class="content-reset-password__row">
-								<h3 class="content-reset-password__title input-title">Введите телефон</h3>
-								<div class="content-reset-password__line">
-									<input autocomplete="off" type="password" name="form[]" data-error="Ошибка" placeholder="+7 (983) 123-45-67" class="content-reset-password__input input hover">
-									<button type="button" class="content-reset-password__viewpass _icon-eye">
-									</button>
-								</div>
+						<form action="#" class="withdrawal-form">
+							<div class="progressbar">
+								<div class="progress" id="progress"></div>
+								<div class="progress-step progress-step-active">1</div>
+								<div class="progress-step">2</div>
 							</div>
-							<div class="content-reset-password__auth auth-content-reset">
-								<div class="auth-content-reset__body">
-									<div class="auth-content-reset__info">
-										<img data-src="img/svg/telephone.svg" alt="">
-										<p class="auth-content-reset__text">Мы вам звоним. Введите последние 4 цифры
-											исходящего номера</p>
+							<div class="withdrawal-form__step form-step form-step-active">
+								<div class="crypto-tabs-cards__cryptos">
+									<h3 class="crypto-tabs-cards__title input-title">Выберите кошелёк для вывода
+									</h3>
+									<select data-spead="350" name="form[]" class="crypto-tabs-cards__selects">
+										<option data-class="crypto-tabs-cards__select-b _usdt-b" value="1" selected>
+											USDT ERC20
+										</option>
+										<option data-class="crypto-tabs-cards__select-b _bitcoin-b" value="2">
+											Bitcoin
+										</option>
+										<option data-class="crypto-tabs-cards__select-b _bitcoin-b" value="3">
+											Bitcoin
+										</option>
+										<option data-class="crypto-tabs-cards__select-b _bitcoin-b" value="4">
+											Bitcoin
+										</option>
+									</select>
+								</div>
+								<div class="withdrawal-form__value">
+									<div class="withdrawal-form__row">
+										<span class="input-title">Укажите сумму</span>
+										<span class="withdrawal-form__output h4">
+											<img data-src="img/svg/coin.svg" alt="">
+											Доступно к выводу: 100 ₽</span>
 									</div>
-									<div class="auth-content-reset__body">
-										<h3 class="auth-content-reset__title input-title">Последние 4 цифры</h3>
-										<fieldset class="auth-content-reset__parts">
-											<input type="tel" class="auth-content-reset__part" maxlength="1">
-											<input type="tel" class="auth-content-reset__part" maxlength="1">
-											<input type="tel" class="auth-content-reset__part" maxlength="1">
-											<input type="tel" class="auth-content-reset__part" maxlength="1">
-										</fieldset>
+									<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="100 ₽" class="input">
+								</div>
+								<button type="button" class="content-reset-password__button button h3 hover btn-next">Продолжить</button>
+							</div>
+							<div class="withdrawal-form__step form-step">
+								<div class="withdrawal-form__block">
+									<div class="withdrawal-form__item">
+										<h3 class="withdrawal-form__title input-title">Сумма к выводу:</h3>
+										<span class="withdrawal-form__price">100 ₽</span>
+									</div>
+									<div class="withdrawal-form__item _grey">
+										<h3 class="withdrawal-form__title input-title">Комиссия:</h3>
+										<span class="withdrawal-form__price">10 ₽</span>
 									</div>
 								</div>
+								<button data-popup="#popup-confirmation" type="submit" class="content-reset-password__button button h3 hover btn-next">Отправить
+									запрос
+								</button>
 							</div>
-							<button type="submit" class="content-reset-password__button button h3 hover">Применить
-								изменения</button>
-							<button type="submit" class="content-reset-password__auth-button h3">Запросить новый
-								звонок</button>
 						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="popup-password" aria-hidden="true" class="popup">
-		<div class="popup__wrapper">
-			<div class="popup__content">
-				<button data-close type="button" class="popup__close">
-					<img src="img/svg/close-popap.svg" alt="">
-				</button>
-				<div class="popup__text">
-					<div class="reset-password">
-						<div class="reset-password__top top-reset-password">
-							<h2 class="top-reset-password__title profile-title">Изменение пароля</h2>
-						</div>
-						<form action="#" class="reset-password__content content-reset-password">
-							<div class="content-reset-password__row">
-								<h3 class="content-reset-password__title input-title">Текущий пароль</h3>
-								<div class="content-reset-password__line">
-									<input autocomplete="off" type="password" name="form[]" data-error="Ошибка" placeholder="Введите пароль" class="content-reset-password__input input hover">
-									<button type="button" class="content-reset-password__viewpass _icon-eye">
-									</button>
-								</div>
-							</div>
-							<div class="content-reset-password__row">
-								<h3 class="content-reset-password__title input-title">Повторите пароль</h3>
-								<div class="content-reset-password__line">
-									<input autocomplete="off" type="password" name="form[]" data-error="Ошибка" placeholder="Введите пароль" class="content-reset-password__input input hover">
-									<button type="button" class="content-reset-password__viewpass _icon-eye">
-									</button>
-								</div>
-							</div>
-							<div class="content-reset-password__row">
-								<h3 class="content-reset-password__title input-title">Подтвердите пароль</h3>
-								<div class="content-reset-password__line">
-									<input autocomplete="off" type="password" name="form[]" data-error="Ошибка" placeholder="Введите пароль" class="content-reset-password__input input hover">
-									<button type="button" class="content-reset-password__viewpass _icon-eye">
-									</button>
-								</div>
-							</div>
-							<button type="submit" class="content-reset-password__button button h3 hover">Применить
-								изменения</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="popup-phone" aria-hidden="true" class="popup">
-		<div class="popup__wrapper">
-			<div class="popup__content">
-				<button data-close type="button" class="popup__close">
-					<img src="img/svg/close-popap.svg" alt="">
-				</button>
-				<div class="popup__text">
-					<div class="reset-password">
-						<div class="reset-password__top top-reset-password">
-							<h2 class="top-reset-password__title profile-title">Изменение телефона</h2>
-						</div>
-						<form action="#" class="reset-password__content content-reset-password">
-							<div class="content-reset-password__row">
-								<h3 class="content-reset-password__title input-title">Телефон</h3>
-								<div class="content-reset-password__line">
-									<input autocomplete="off" type="password" name="form[]" data-error="Ошибка" placeholder="Введите телефон" class="content-reset-password__input input hover">
-									<button type="button" class="content-reset-password__viewpass _icon-eye">
-									</button>
-								</div>
-							</div>
-							<!-- <div class="content-reset-password__row">
-                            <h3 class="content-reset-password__title input-title">Повторите пароль</h3>
-                            <div class="content-reset-password__line">
-                                <input autocomplete="off" type="password" name="form[]" data-error="Ошибка"
-                                    placeholder="Введите пароль" class="content-reset-password__input input hover">
-                                <button type="button" class="content-reset-password__viewpass"><img
-                                        src="img/svg/eye.svg" alt="">
-                                </button>
+						<!-- <form action="#" class="withdrawal-form">
+                        <div class="withdrawal-form__progressbar">
+                            <div class="withdrawal-form__block active h3">
+                                <span class="withdrawal-form__line _active"></span>
+                                <span class="withdrawal-form__item _active">1</span>
+                            </div>
+                            <span class="withdrawal-form__line-gap"></span>
+                            <div class="withdrawal-form__block h3">
+                                <span class="withdrawal-form__item">2</span>
+                                <span class="withdrawal-form__line"></span>
                             </div>
                         </div>
-                        <div class="content-reset-password__row">
-                            <h3 class="content-reset-password__title input-title">Подтвердите пароль</h3>
-                            <div class="content-reset-password__line">
-                                <input autocomplete="off" type="password" name="form[]" data-error="Ошибка"
-                                    placeholder="Введите пароль" class="content-reset-password__input input hover">
-                                <button type="button" class="content-reset-password__viewpass"><img
-                                        src="img/svg/eye.svg" alt="">
-                                </button>
+                        <div class="withdrawal-form__steps">
+                            <div class="withdrawal-form__step">
+                                <div class="crypto-tabs-cards__cryptos">
+                                    <h3 class="crypto-tabs-cards__title input-title">Выберите кошелёк для вывода
+                                    </h3>
+                                    <select data-spead="350" name="form[]" class="crypto-tabs-cards__selects">
+                                        <option data-class="crypto-tabs-cards__select-b _usdt-b" value="1" selected>
+                                            USDT ERC20
+                                        </option>
+                                        <option data-class="crypto-tabs-cards__select-b _bitcoin-b" value="2">
+                                            Bitcoin
+                                        </option>
+                                        <option data-class="crypto-tabs-cards__select-b _bitcoin-b" value="3">
+                                            Bitcoin
+                                        </option>
+                                        <option data-class="crypto-tabs-cards__select-b _bitcoin-b" value="4">
+                                            Bitcoin
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="withdrawal-form__value">
+                                    <div class="withdrawal-form__row">
+                                        <span class="input-title">Укажите сумму</span>
+                                        <span class="withdrawal-form__output h4">
+                                            <img data-src="img/svg/coin.svg" alt="">
+                                            Доступно к выводу: 100 ₽</span>
+                                    </div>
+                                    <input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+                                        placeholder="100 ₽" class="input">
+                                </div>
                             </div>
-                        </div> -->
-							<button data-popup="#popup-code" type="button" class="content-reset-password__button button h3 hover">Позвонить</button>
-						</form>
+                        </div>
+                        <button type="button" class="content-reset-password__button button h3 hover">Продолжить</button>
+                    </form> -->
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="popup-bind-successful" aria-hidden="true" class="popup">
+	<div id="popup-confirmation" aria-hidden="true" class="popup">
 		<div class="popup__wrapper">
 			<div class="popup__content">
 				<button data-close type="button" class="popup__close">
@@ -528,8 +499,9 @@
 					<div class="bind-successful">
 						<div class="bind-successful__body">
 							<div class="bind-successful__top">
-								<picture><source data-srcset="img/bind-card/check.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/bind-card/check.png" alt=""></picture>
-								<h2 class="bind-successful__title profile-title">Кошелёк успешно привязан!</h2>
+								<picture><source srcset="img/bind-card/check.webp" type="image/webp"><img src="img/bind-card/check.png" alt=""></picture>
+								<!-- <picture><source data-srcset="img/bind-card/check.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/bind-card/check.png" alt=""></picture> -->
+								<h2 class="bind-successful__title profile-title">Запрос на вывод 100 ₽ отправлен!</h2>
 							</div>
 							<div class="bind-successful__time">
 								<div class="bind-successful__line">
@@ -544,180 +516,7 @@
 		</div>
 	</div>
 	</div>
-	<div id="popup-bind-card" aria-hidden="true" class="popup">
-		<div class="popup__wrapper">
-			<div class="popup__content">
-				<button data-close type="button" class="popup__close">
-					<img src="img/svg/close-popap.svg" alt="">
-				</button>
-				<div class="popup__text">
-					<div class="bind-card">
-						<div class="bind-card__top top-bind-card">
-							<h2 class="top-bind-card__title profile-title">Привязать новый кошелёк</h2>
-						</div>
-						<div class="bind-card__cards cards-bind-card">
-							<div data-tabs class="cards-bind-card__tabs tabs-cards-bind">
-								<div class="tabs-cards-bind__inner">
-									<div class="tabs-cards-bind__lable">
-										<h3 class="input-title">Кошельки</h3>
-									</div>
-									<nav data-tabs-titles class="tabs-cards-bind__navigation">
-										<button type="button" class="tabs-cards-bind__title profile-title _tab-active hover-card">
-											<div class="tabs-cards-bind__image">
-												<img data-src="img/svg/bank-card.svg" alt="">
-											</div>
-											<h3 class="input-title">Карта</h3>
-										</button>
-										<button type="button" class="tabs-cards-bind__title profile-title">
-											<div class="tabs-cards-bind__image">
-												<img data-src="img/svg/perfect.svg" alt="">
-											</div>
-											<h3 class="input-title">PerfectMoney</h3>
-										</button>
-										<button type="button" class="tabs-cards-bind__title profile-title">
-											<div class="tabs-cards-bind__image">
-												<img data-src="img/svg/cripto.svg" alt="">
-											</div>
-											<h3 class="input-title">Криптовалюта</h3>
-										</button>
-										<button type="button" class="tabs-cards-bind__title profile-title">
-											<div class="tabs-cards-bind__image">
-												<img data-src="img/svg/yoomoney.svg" alt="">
-											</div>
-											<h3 class="input-title">ЮMoney</h3>
-										</button>
-									</nav>
-								</div>
-								<div data-tabs-body class="tabs-cards-bind__content">
-									<div class="tabs-cards-bind__body">
-										<form action="#" class="tabs-cards-bind__card card-tabs-cards">
-											<div class="card-tabs-cards__inner">
-												<div class="card-tabs-cards__front _icon-internet">
-													<div class="card-tabs-cards__header h4">Номер карты</div>
-													<fieldset class="card-tabs-cards__fields">
-														<input type="tel" class="card-tabs-cards__part input-part-focus" maxlength="4">
-														<input type="tel" class="card-tabs-cards__part input-part-focus" maxlength="4">
-														<input type="tel" class="card-tabs-cards__part input-part-focus" maxlength="4">
-														<input type="tel" class="card-tabs-cards__part input-part-focus" maxlength="4">
-													</fieldset>
-													<div class="card-tabs-cards__bottom">
-														<img data-src="img/svg/visa.svg" alt="">
-													</div>
-												</div>
-												<div class="card-tabs-cards__back"></div>
-											</div>
-											<button data-popup="#popup-bind-successful" type="button" class="card-tabs-cards__button button h3 hover">Привязать
-												карту</button>
-										</form>
-									</div>
-									<div class="tabs-cards-bind__body">
-										<form action="#" class="tabs-cards-bind__perfect perfect-tabs-cards">
-											<div class="content-reset-password__row">
-												<h3 class="content-reset-password__title input-title">Номер кошелька</h3>
-												<div class="content-reset-password__line">
-													<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="1234567890" class="content-reset-password__input input hover">
-												</div>
-											</div>
-											<button type="submit" class="content-reset-password__button button h3 hover">Привязать
-												кошелёк</button>
-										</form>
-									</div>
-									<div class="tabs-cards-bind__body">
-										<form action="#" class="tabs-cards-bind__crypto crypto-tabs-cards">
-											<div class="crypto-tabs-cards__inner">
-												<div class="crypto-tabs-cards__cryptos">
-													<h3 class="crypto-tabs-cards__title input-title">Выберите криптовалюту
-													</h3>
-													<select data-spead="350" name="form[]" class="crypto-tabs-cards__selects">
-														<option data-class="crypto-tabs-cards__select _bitcoin" value="1" selected>
-															Bitcoin
-														</option>
-														<option data-class="crypto-tabs-cards__select _usdt" value="2">USDT
-														</option>
-														<option data-class="crypto-tabs-cards__select _bitcoin" value="3">
-															Bitcoin
-														</option>
-														<option data-class="crypto-tabs-cards__select _bitcoin" value="4">
-															Bitcoin
-														</option>
-													</select>
-												</div>
-												<div class="crypto-tabs-cards__network">
-													<h3 class="crypto-tabs-cards__title input-title">Выберите криптовалюту
-													</h3>
-													<div class="crypto-tabs-cards__items">
-														<div class="crypto-tabs-cards__item active-crypto hover">ERC20</div>
-														<div class="crypto-tabs-cards__item hover">ERC20</div>
-														<div class="crypto-tabs-cards__item hover">ERC20</div>
-													</div>
-												</div>
-												<div class="content-reset-password__row">
-													<h3 class="content-reset-password__title input-title">Номер кошелька
-													</h3>
-													<div class="content-reset-password__line">
-														<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="3J3y9zwoicFSY5Guhq9ErQMnPhyhw7q2Vf" class="content-reset-password__input input hover">
-													</div>
-												</div>
-												<button type="submit" class="content-reset-password__button button h3 hover">Привязать
-													кошелёк</button>
-											</div>
-										</form>
-									</div>
-									<div class="tabs-cards-bind__body">
-										<form action="#" class="tabs-cards-bind__card card-tabs-cards">
-											<div class="card-tabs-cards__inner">
-												<div class="card-tabs-cards__front _icon-internet">
-													<div class="card-tabs-cards__header h4">Номер карты</div>
-													<fieldset class="card-tabs-cards__fields">
-														<input type="tel" class="card-tabs-cards__part input-part-focus" maxlength="4">
-														<input type="tel" class="card-tabs-cards__part input-part-focus" maxlength="4">
-														<input type="tel" class="card-tabs-cards__part input-part-focus" maxlength="4">
-														<input type="tel" class="card-tabs-cards__part input-part-focus" maxlength="4">
-													</fieldset>
-													<div class="card-tabs-cards__bottom">
-														<img data-src="img/svg/visa.svg" alt="">
-													</div>
-												</div>
-												<div class="card-tabs-cards__back"></div>
-											</div>
-											<button type="submit" class="card-tabs-cards__button button h3 hover">Привязать
-												карту</button>
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script src="js/app.min.js?_v=20221212183614"></script>
-	<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js?_v=20221212183614"></script> -->
-	<!-- <script>
-        const ctx = document.getElementById('myChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00'],
-                datasets: [{
-                    label: 'My First Chart Title',
-                    data: [5, 6, 5, 4, 4, 6, 7, 6, 5, 7, 7],
-                    borderWidth: 5,
-                    cubicInterpolationMode: 'monotone',
-                    fill: true,
-                    // backgroundColor: 'green',
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            },
-        });
-    </script> -->
+	<script src="js/app.min.js?_v=20221213130308"></script>
 </body>
 
 </html>
