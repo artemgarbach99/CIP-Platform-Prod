@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20221213130308">
+	<link rel="stylesheet" href="css/style.min.css?_v=20221214195226">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
 <body>
 	<div class="wrapper">
 		<main class="page">
-			<div class="menu">
+			<div data-da=".profile-content-header__dropdown, 768" class="menu">
 				<div class="menu__header header-menu">
 					<a href="" class="header-menu__logo"><img src="img/logo.svg" alt="">
 						<span>Кабинет</span>
@@ -116,6 +116,9 @@
 			<section class="content">
 				<header class="header">
 					<div class="header__body">
+						<a href="" class="header__logo-mobile">
+							<img data-src="img/logo.svg" alt="">
+							Кабинет</a>
 						<a href="" class="header__button _icon-plus">Открыть депозит</a>
 						<div class="header__content content-header">
 							<div class="content-header__block">
@@ -126,17 +129,34 @@
 									<h4 class="balance-content-header__title">Баланс</h4>
 									<span class="balance-content-header__value _icon-rubl">183 760</span>
 								</div>
-								<a href="" class="content-header__button button h3 _icon-plus hover">Пополнить</a>
+								<a href="" class="content-header__button button h3 _icon-plus hover">
+									<span>Пополнить</span>
+								</a>
 							</div>
 							<div class="content-header__profile profile-content-header">
 								<a href="" class="profile-content-header__avatar">
 									<picture><source srcset="img/header/avatar.webp" type="image/webp"><img src="img/header/avatar.png" alt=""></picture>
 								</a>
 								<div class="profile-content-header__item">
-									<h3 class="profile-content-header__title h2 _icon-arrow-menu">Константин</h3>
+									<h3 class="profile-content-header__title h2 _icon-arrow-menu">
+										<span>Константин</span>
+									</h3>
 									<div class="profile-content-header__dropdown dropdown-profile-content">
+										<div class="mobile-header-info">
+											<div class="mobile-header-info__balance">
+												<a href="" class="mobile-header-info__sim">
+													<picture><source srcset="img/header/sim.webp" type="image/webp"><img src="img/header/sim.png" alt=""></picture>
+												</a>
+												<div class="mobile-header-info__inner">
+													<h4 class="mobile-header-info__title">Баланс</h4>
+													<span class="mobile-header-info__value _icon-rubl">183 760</span>
+												</div>
+											</div>
+											<a href="" class="mobile-header-info__button button h3 _icon-plus hover">
+												<span>Пополнить</span>
+											</a>
+										</div>
 										<div class="dropdown-profile-content__body">
-											<!-- active-dropdown-profile -->
 											<a href="#" class="dropdown-profile-content__item h3 _icon-settings hover">Настройки</a>
 											<a href="#" class="dropdown-profile-content__item h3 _icon-refill hover">Пополнить</a>
 											<a href="#" class="dropdown-profile-content__item h3 _icon-output hover">Вывести
@@ -172,32 +192,38 @@
 								</div>
 								<div class="wallets-added__main main-wallets-added">
 									<div class="main-wallets-added__item">
-										<div class="main-wallets-added__image">
-											<img data-src="img/svg/bitcoin.svg" alt="">
-										</div>
-										<div class="main-wallets-added__text">
-											<h3 class="profile-title">Bitcoin</h3>
-											<span class="input-title">3J3y9zwoicFSY5Guhq9ErQMnPhyhw7q2Vf</span>
-										</div>
-										<button type="button" class="main-wallets-added__button button h3 hover">Удалить</button>
-									</div>
-									<div class="main-wallets-added__item">
-										<div class="main-wallets-added__image">
-											<img data-src="img/svg/usdt.svg" alt="">
-										</div>
-										<div class="main-wallets-added__text">
-											<h3 class="profile-title">Bitcoin</h3>
-											<span>3J3y9zwoicFSY5Guhq9ErQMnPhyhw7q2Vf</span>
+										<div class="main-wallets-added__inner">
+											<div class="main-wallets-added__image">
+												<img data-src="img/svg/bitcoin.svg" alt="">
+											</div>
+											<div class="main-wallets-added__text">
+												<h3 class="profile-title">Bitcoin</h3>
+												<span class="input-title">3J3y9zwoicFSY5Guhq9ErQMnPhyhw7q2Vf</span>
+											</div>
 										</div>
 										<button type="button" class="main-wallets-added__button button h3 hover">Удалить</button>
 									</div>
 									<div class="main-wallets-added__item">
-										<div class="main-wallets-added__image">
-											<img data-src="img/svg/bank-card.svg" alt="">
+										<div class="main-wallets-added__inner">
+											<div class="main-wallets-added__image">
+												<img data-src="img/svg/usdt.svg" alt="">
+											</div>
+											<div class="main-wallets-added__text">
+												<h3 class="profile-title">Bitcoin</h3>
+												<span>3J3y9zwoicFSY5Guhq9ErQMnPhyhw7q2Vf</span>
+											</div>
 										</div>
-										<div class="main-wallets-added__text">
-											<h3 class="profile-title">Bitcoin</h3>
-											<span>3J3y9zwoicFSY5Guhq9ErQMnPhyhw7q2Vf</span>
+										<button type="button" class="main-wallets-added__button button h3 hover">Удалить</button>
+									</div>
+									<div class="main-wallets-added__item">
+										<div class="main-wallets-added__inner">
+											<div class="main-wallets-added__image">
+												<img data-src="img/svg/bank-card.svg" alt="">
+											</div>
+											<div class="main-wallets-added__text">
+												<h3 class="profile-title">Bitcoin</h3>
+												<span>3J3y9zwoicFSY5Guhq9ErQMnPhyhw7q2Vf</span>
+											</div>
 										</div>
 										<button type="button" class="main-wallets-added__button button h3 hover">Удалить</button>
 									</div>
@@ -372,73 +398,95 @@
                         </div>
                     </section> -->
 				</div>
+				<div class="menu-mobile">
+					<div class="menu-mobile__row">
+						<a href="" class="menu-mobile__item">
+							<img data-src="img/menu/01.svg" alt="">
+							<h4 class="menu-mobile__title h4">Дашборд</h4>
+						</a>
+						<a href="" class="menu-mobile__item">
+							<img data-src="img/menu/02.svg" alt="">
+							<h4 class="menu-mobile__title h4">Дашборд</h4>
+						</a>
+						<a href="" class="menu-mobile__button _icon-plus">
+						</a>
+						<a href="" class="menu-mobile__item">
+							<img data-src="img/menu/03.svg" alt="">
+							<h4 class="menu-mobile__title h4">Дашборд</h4>
+						</a>
+						<a href="" class="menu-mobile__item">
+							<img data-src="img/menu/04.svg" alt="">
+							<h4 class="menu-mobile__title h4">Дашборд</h4>
+						</a>
+					</div>
+				</div>
 			</section>
 		</main>
 	</div>
 	<div id="popup-withdrawal" aria-hidden="true" class="popup">
 		<div class="popup__wrapper">
-			<div class="popup__content">
+			<!-- <div class="popup__content"> -->
+			<!-- <div class="popup__text"> -->
+			<div class="reset-password popup__content">
 				<button data-close type="button" class="popup__close">
 					<img src="img/svg/close-popap.svg" alt="">
 				</button>
-				<div class="popup__text">
-					<div class="reset-password">
-						<div class="reset-password__top top-reset-password">
-							<h2 class="top-reset-password__title profile-title">Вывод средств</h2>
+				<div class="reset-password__top top-reset-password">
+					<h2 class="top-reset-password__title profile-title">Вывод средств</h2>
+				</div>
+				<form action="#" class="withdrawal-form">
+					<div class="progressbar">
+						<div class="progress" id="progress"></div>
+						<div class="progress-step progress-step-active">1</div>
+						<div class="progress-step">2</div>
+					</div>
+					<div class="withdrawal-form__step form-step form-step-active">
+						<div class="crypto-tabs-cards__cryptos">
+							<h3 class="crypto-tabs-cards__title input-title">Выберите кошелёк для вывода
+							</h3>
+							<select data-spead="350" name="form[]" class="crypto-tabs-cards__selects">
+								<option data-class="crypto-tabs-cards__select-b _usdt-b" value="1" selected>
+									USDT ERC20
+								</option>
+								<option data-class="crypto-tabs-cards__select-b _bitcoin-b" value="2">
+									Bitcoin
+								</option>
+								<option data-class="crypto-tabs-cards__select-b _bitcoin-b" value="3">
+									Bitcoin
+								</option>
+								<option data-class="crypto-tabs-cards__select-b _bitcoin-b" value="4">
+									Bitcoin
+								</option>
+							</select>
 						</div>
-						<form action="#" class="withdrawal-form">
-							<div class="progressbar">
-								<div class="progress" id="progress"></div>
-								<div class="progress-step progress-step-active">1</div>
-								<div class="progress-step">2</div>
+						<div class="withdrawal-form__value">
+							<div class="withdrawal-form__row">
+								<span class="input-title">Укажите сумму</span>
+								<span class="withdrawal-form__output h4">
+									<img data-src="img/svg/coin.svg" alt="">
+									Доступно к выводу: 100 ₽</span>
 							</div>
-							<div class="withdrawal-form__step form-step form-step-active">
-								<div class="crypto-tabs-cards__cryptos">
-									<h3 class="crypto-tabs-cards__title input-title">Выберите кошелёк для вывода
-									</h3>
-									<select data-spead="350" name="form[]" class="crypto-tabs-cards__selects">
-										<option data-class="crypto-tabs-cards__select-b _usdt-b" value="1" selected>
-											USDT ERC20
-										</option>
-										<option data-class="crypto-tabs-cards__select-b _bitcoin-b" value="2">
-											Bitcoin
-										</option>
-										<option data-class="crypto-tabs-cards__select-b _bitcoin-b" value="3">
-											Bitcoin
-										</option>
-										<option data-class="crypto-tabs-cards__select-b _bitcoin-b" value="4">
-											Bitcoin
-										</option>
-									</select>
-								</div>
-								<div class="withdrawal-form__value">
-									<div class="withdrawal-form__row">
-										<span class="input-title">Укажите сумму</span>
-										<span class="withdrawal-form__output h4">
-											<img data-src="img/svg/coin.svg" alt="">
-											Доступно к выводу: 100 ₽</span>
-									</div>
-									<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="100 ₽" class="input">
-								</div>
-								<button type="button" class="content-reset-password__button button h3 hover btn-next">Продолжить</button>
+							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="100 ₽" class="input">
+						</div>
+						<button type="button" class="content-reset-password__button button h3 hover btn-next">Продолжить</button>
+					</div>
+					<div class="withdrawal-form__step form-step">
+						<div class="withdrawal-form__block">
+							<div class="withdrawal-form__item">
+								<h3 class="withdrawal-form__title input-title">Сумма к выводу:</h3>
+								<span class="withdrawal-form__price">100 ₽</span>
 							</div>
-							<div class="withdrawal-form__step form-step">
-								<div class="withdrawal-form__block">
-									<div class="withdrawal-form__item">
-										<h3 class="withdrawal-form__title input-title">Сумма к выводу:</h3>
-										<span class="withdrawal-form__price">100 ₽</span>
-									</div>
-									<div class="withdrawal-form__item _grey">
-										<h3 class="withdrawal-form__title input-title">Комиссия:</h3>
-										<span class="withdrawal-form__price">10 ₽</span>
-									</div>
-								</div>
-								<button data-popup="#popup-confirmation" type="submit" class="content-reset-password__button button h3 hover btn-next">Отправить
-									запрос
-								</button>
+							<div class="withdrawal-form__item _grey">
+								<h3 class="withdrawal-form__title input-title">Комиссия:</h3>
+								<span class="withdrawal-form__price">10 ₽</span>
 							</div>
-						</form>
-						<!-- <form action="#" class="withdrawal-form">
+						</div>
+						<button data-popup="#popup-confirmation" type="submit" class="content-reset-password__button button h3 hover btn-next">Отправить
+							запрос
+						</button>
+					</div>
+				</form>
+				<!-- <form action="#" class="withdrawal-form">
                         <div class="withdrawal-form__progressbar">
                             <div class="withdrawal-form__block active h3">
                                 <span class="withdrawal-form__line _active"></span>
@@ -484,39 +532,39 @@
                         </div>
                         <button type="button" class="content-reset-password__button button h3 hover">Продолжить</button>
                     </form> -->
-					</div>
-				</div>
 			</div>
+			<!-- </div> -->
+			<!-- </div> -->
 		</div>
 	</div>
 	<div id="popup-confirmation" aria-hidden="true" class="popup">
 		<div class="popup__wrapper">
-			<div class="popup__content">
+			<!-- <div class="popup__content"> -->
+			<!-- <div class="popup__text"> -->
+			<div class="bind-successful popup__content">
 				<button data-close type="button" class="popup__close">
 					<img src="img/svg/close-popap.svg" alt="">
 				</button>
-				<div class="popup__text">
-					<div class="bind-successful">
-						<div class="bind-successful__body">
-							<div class="bind-successful__top">
-								<picture><source srcset="img/bind-card/check.webp" type="image/webp"><img src="img/bind-card/check.png" alt=""></picture>
-								<!-- <picture><source data-srcset="img/bind-card/check.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/bind-card/check.png" alt=""></picture> -->
-								<h2 class="bind-successful__title profile-title">Запрос на вывод 100 ₽ отправлен!</h2>
-							</div>
-							<div class="bind-successful__time">
-								<div class="bind-successful__line">
-									<span></span>
-								</div>
-								<span class="bind-successful__text input-title">Окно закроется через 5</span>
-							</div>
+				<div class="bind-successful__body">
+					<div class="bind-successful__top">
+						<picture><source srcset="img/bind-card/check.webp" type="image/webp"><img src="img/bind-card/check.png" alt=""></picture>
+						<!-- <picture><source data-srcset="img/bind-card/check.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/bind-card/check.png" alt=""></picture> -->
+						<h2 class="bind-successful__title profile-title">Запрос на вывод 100 ₽ отправлен!</h2>
+					</div>
+					<div class="bind-successful__time">
+						<div class="bind-successful__line">
+							<span></span>
 						</div>
+						<span class="bind-successful__text input-title">Окно закроется через 5</span>
 					</div>
 				</div>
 			</div>
+			<!-- </div> -->
+			<!-- </div> -->
 		</div>
 	</div>
 	</div>
-	<script src="js/app.min.js?_v=20221213130308"></script>
+	<script src="js/app.min.js?_v=20221214195226"></script>
 </body>
 
 </html>
