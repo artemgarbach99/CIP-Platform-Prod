@@ -4699,6 +4699,14 @@
                     prevEl: ".swiper-button-prev",
                     nextEl: ".swiper-button-next"
                 },
+                breakpoints: {
+                    375: {
+                        spaceBetween: 10
+                    },
+                    1200: {
+                        spaceBetween: 20
+                    }
+                },
                 on: {}
             });
         }
@@ -4818,10 +4826,25 @@
         da.init();
         document.querySelector(".profile-content-header__title").onclick = function() {
             document.querySelector(".dropdown-profile-content").classList.toggle("dropdown-content-open");
+            if (document.querySelector(".dropdown-profile-content").classList.contains("dropdown-content-open")) document.querySelector(".profile-content-header__title").classList.add("active-title"); else document.querySelector(".profile-content-header__title").classList.remove("active-title");
         };
+        const ticketOpen = document.querySelectorAll(".messages-tickets-available__item");
+        ticketOpen.forEach((element => element.addEventListener("click", ticketClassAdd)));
+        function ticketClassAdd() {
+            document.querySelector(".content-tickets-available").classList.add("ticket-body-open");
+        }
+        document.querySelector(".content-tickets-available__back").onclick = function() {
+            document.querySelector(".content-tickets-available").classList.remove("ticket-body-open");
+        };
+        console.log(ticketOpen);
         document.querySelector(".header-menu__back").onclick = function() {
             document.querySelector(".menu").classList.toggle("header-menu-close");
-            if (document.querySelector(".menu").classList.contains("header-menu-close")) document.querySelector(".header__button").classList.add("header-link-close"); else document.querySelector(".header__button").classList.remove("header-link-close");
+            if (document.querySelector(".menu").classList.contains("header-menu-close")) {
+                document.querySelector(".header__button").classList.add("header-link-close");
+                window.onresize = function(event) {
+                    if (document.body.clientWidth <= 768) document.querySelector(".menu").classList.remove("header-menu-close");
+                };
+            } else document.querySelector(".header__button").classList.remove("header-link-close");
         };
         const ALLOW_LIST = new Set([ "Backspace", "ArrowLeft", "ArrowRight", "Tab", "Enter", "ArrowDown", "ArrowUp" ]);
         (() => {
