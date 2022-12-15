@@ -905,6 +905,10 @@ body::after {
   left: 0;
 }
 
+.tabs-cards-bind__navigation::-webkit-scrollbar {
+  display: none;
+}
+
 .tabs-cards-bind__title {
   border-radius: 0.5rem;
   padding: 1.125rem;
@@ -2870,6 +2874,7 @@ body::after {
 }
 
 .accounts__lable span {
+  margin-left: 0.3125rem;
   color: #6A698D;
 }
 
@@ -2919,6 +2924,7 @@ body::after {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 100%;
           flex: 1 1 100%;
+  width: 100%;
 }
 
 .content-accounts__inner {
@@ -2935,9 +2941,9 @@ body::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .content-accounts__image {
@@ -2990,6 +2996,7 @@ body::after {
   background-color: #3460FE;
   padding: 0.9375rem 1.9375rem;
   font-weight: 700;
+  margin-left: auto;
 }
 
 .profile__title {
@@ -3385,6 +3392,17 @@ body::after {
   margin-left: auto;
 }
 
+.tickets-available {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem 0;
+}
+
 .tickets-available__body {
   background-color: #0E0D30;
   border: 0.0625rem solid #1E1A40;
@@ -3393,6 +3411,7 @@ body::after {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  height: 49rem;
 }
 
 .messages-tickets-available {
@@ -3565,6 +3584,10 @@ body::after {
   width: 66.0305343511%;
 }
 
+.content-tickets-available._fix {
+  width: 43.25rem;
+}
+
 .content-tickets-available__top {
   padding-top: 2rem;
   display: -webkit-box;
@@ -3576,6 +3599,24 @@ body::after {
   position: relative;
 }
 
+.content-tickets-available__mob-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0E0D30), to(#171335));
+  background: -o-linear-gradient(top, #0E0D30 0%, #171335 100%);
+  background: linear-gradient(180deg, #0E0D30 0%, #171335 100%);
+  border: 0.0625rem solid #1E1A40;
+  padding: 0.625rem 0.9375rem;
+}
+
 .content-tickets-available__title {
   font-weight: 700;
   color: #6A698D;
@@ -3585,9 +3626,14 @@ body::after {
 .content-tickets-available__back {
   cursor: pointer;
   font-weight: 700;
-  position: absolute;
   top: 0.9375rem;
   left: 0.9375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .content-tickets-available__content {
@@ -3617,6 +3663,7 @@ body::after {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  max-width: 34.375rem;
 }
 
 .content-tickets-available__avatar img {
@@ -3704,6 +3751,37 @@ body::after {
   padding: 1.0625rem 0;
   background-color: #3460FE;
   font-weight: 700;
+}
+
+.content-tickets-available__new-ticket {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.content-tickets-available__new-ticket p {
+  max-width: 22.5625rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 140%;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #FEFEFE;
+  margin-top: 2rem;
+  padding: 0 0.625rem;
 }
 
 .referral__body {
@@ -4591,10 +4669,9 @@ body::after {
 }
 
 .no-webp .form-payment-request__front{
-  background: url("../img/payment-request/bg.png") 0 0 no-repeat; }
+  background: url("../img/payment-request/bg.png") 0 0/cover no-repeat; }
 
 .form-payment-request__front {
-  background-size: cover;
   border-radius: 0.75rem;
   width: 19rem;
   padding: 2.1875rem 1.5rem 1.5rem 1.5rem;
@@ -5550,6 +5627,12 @@ body::after {
   }
 }
 
+@media (min-width: 75em) {
+  .content-tickets-available__mob-btn {
+    display: none;
+  }
+}
+
 @media (max-width: 75em) {
   .profile-content-header__title span {
     display: none;
@@ -5561,6 +5644,16 @@ body::after {
 
   .messages-tickets-available__text {
     white-space: normal;
+  }
+
+  .messages-tickets-available__line {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .messages-tickets-available__span {
+    margin: 0;
   }
 
   .content-tickets-available {
@@ -5579,6 +5672,19 @@ body::after {
     -webkit-transform: translate(0px, 0px);
         -ms-transform: translate(0px, 0px);
             transform: translate(0px, 0px);
+  }
+
+  .content-tickets-available__top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-bottom: 0.625rem;
+    padding-top: 0;
+    gap: 1.125rem;
   }
 
   .main-referral__body {
@@ -5680,7 +5786,6 @@ body::after {
         -ms-flex-direction: row;
             flex-direction: row;
     gap: 0.3125rem;
-    padding-right: 0.625rem;
   }
 
   .content-accounts__callback {
@@ -5891,6 +5996,10 @@ body::after {
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
     padding-right: 1.25rem;
+  }
+
+  .content-accounts__inner {
+    width: 18.75rem;
   }
 
   .content-profile__body {
@@ -6105,17 +6214,46 @@ body::after {
     padding: 0.9375rem;
   }
 
+  .accounts__top {
+    padding: 1.5rem;
+  }
+
   .content-accounts__item {
     padding: 0.875rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .content-accounts__inner {
-    padding-right: 1.25rem;
-    width: 12.5rem;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
+  }
+
+  .content-accounts__block-m {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 
   .content-accounts__button {
     padding: 0.9375rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: 0;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    padding: 0.875rem 0;
+    margin-top: 1.125rem;
   }
 
   .social-content-profile__title {
@@ -6269,10 +6407,6 @@ body::after {
     min-height: 2rem;
   }
 
-  .content-accounts__button {
-    padding: 0.9375rem;
-  }
-
   .profile__title h2 {
     font-size: 1.25rem;
   }
@@ -6346,8 +6480,31 @@ body::after {
     font-size: 1rem;
   }
 
-  .content-tickets-available__top {
-    padding-top: 2.9375rem;
+  .tickets-available {
+    padding: 0;
+    margin: 0 -0.9375rem;
+  }
+
+  .tickets-available__body {
+    border-radius: 0;
+    border: none;
+  }
+
+  .messages-tickets-available__item {
+    padding: 1.125rem;
+  }
+
+  .content-tickets-available._fix {
+    width: 100%;
+  }
+
+  .content-tickets-available__content {
+    padding: 0.9375rem 0.9375rem 0.9375rem;
+  }
+
+  .content-tickets-available__new-ticket p {
+    font-size: 1rem;
+    margin-top: 1.5rem;
   }
 
   .main-referral__input {
@@ -6403,6 +6560,10 @@ body::after {
         -ms-flex-align: start;
             align-items: flex-start;
     gap: 0.875rem;
+  }
+
+  .enter-content-calculator__button {
+    padding: 0.875rem 0;
   }
 
   .banner-content-calculator {
@@ -6522,25 +6683,6 @@ body::after {
         align-self: flex-start;
   }
 
-  .content-accounts__item {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  .content-accounts__button {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    padding: 0.875rem 0;
-    margin-top: 1.125rem;
-  }
-
   .no-webp .main-referral__input::after{
     background: url("../img/refferals/03.png") 0 0 no-repeat; }
 
@@ -6634,7 +6776,7 @@ body::after {
 
 .webp .banner-content-calculator{ background: url(../img/open-deposit/banner/main.webp) 0 0 no-repeat; }
 
-.webp .form-payment-request__front{ background: url(../img/payment-request/bg.webp) 0 0 no-repeat; }
+.webp .form-payment-request__front{ background: url(../img/payment-request/bg.webp) 0 0/cover no-repeat; }
 
 .webp .form-payment-request__back{ background: url(../img/bind-card/01.webp) 0 0 no-repeat; }
 

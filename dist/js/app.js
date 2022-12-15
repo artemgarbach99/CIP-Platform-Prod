@@ -4832,17 +4832,19 @@
         ticketOpen.forEach((element => element.addEventListener("click", ticketClassAdd)));
         function ticketClassAdd() {
             document.querySelector(".content-tickets-available").classList.add("ticket-body-open");
+            document.querySelector(".content-tickets-available__back").onclick = function() {
+                document.querySelector(".content-tickets-available").classList.remove("ticket-body-open");
+            };
         }
-        document.querySelector(".content-tickets-available__back").onclick = function() {
-            document.querySelector(".content-tickets-available").classList.remove("ticket-body-open");
-        };
-        console.log(ticketOpen);
         document.querySelector(".header-menu__back").onclick = function() {
             document.querySelector(".menu").classList.toggle("header-menu-close");
             if (document.querySelector(".menu").classList.contains("header-menu-close")) {
                 document.querySelector(".header__button").classList.add("header-link-close");
                 window.onresize = function(event) {
-                    if (document.body.clientWidth <= 768) document.querySelector(".menu").classList.remove("header-menu-close");
+                    if (document.body.clientWidth <= 768) {
+                        document.querySelector(".menu").classList.remove("header-menu-close");
+                        document.querySelector(".header__button").classList.remove("header-link-close");
+                    }
                 };
             } else document.querySelector(".header__button").classList.remove("header-link-close");
         };
