@@ -4826,7 +4826,13 @@
         da.init();
         document.querySelector(".profile-content-header__title").onclick = function() {
             document.querySelector(".dropdown-profile-content").classList.toggle("dropdown-content-open");
-            if (document.querySelector(".dropdown-profile-content").classList.contains("dropdown-content-open")) document.querySelector(".profile-content-header__title").classList.add("active-title"); else document.querySelector(".profile-content-header__title").classList.remove("active-title");
+            if (document.querySelector(".dropdown-profile-content").classList.contains("dropdown-content-open")) {
+                document.querySelector(".profile-content-header__title").classList.add("active-title");
+                document.querySelector("body").classList.add("lock");
+            } else {
+                document.querySelector(".profile-content-header__title").classList.remove("active-title");
+                document.querySelector("body").classList.remove("lock");
+            }
         };
         const ticketOpen = document.querySelectorAll(".messages-tickets-available__item");
         ticketOpen.forEach((element => element.addEventListener("click", ticketClassAdd)));
