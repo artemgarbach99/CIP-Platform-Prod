@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20221216141011">
+	<link rel="stylesheet" href="css/style.min.css?_v=20221222191644">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -114,7 +114,7 @@
 				</div>
 			</div>
 			<section class="content">
-				<header class="header">
+				<div class="header">
 					<div class="header__body">
 						<a href="" class="header__logo-mobile">
 							<img data-src="img/logo.svg" alt="">
@@ -178,7 +178,7 @@
 							</div>
 						</div>
 					</div>
-				</header>
+				</div>
 				<div class="inner">
 					<!-- <section class="main">
                         <div class="main__container">
@@ -725,6 +725,34 @@
 			</section>
 		</main>
 	</div>
+	<script>
+		const menuMain = document.querySelector('.header-menu__back').onclick = function() {
+			document.querySelector('.menu').classList.toggle('header-menu-close');
+			if (document.querySelector('.menu').classList.contains('header-menu-close')) {
+				document.querySelector('.header__button').classList.add('header-link-close');
+				window.onresize = function(event) {
+					if (document.body.clientWidth <= 768) {
+						document.querySelector('.menu').classList.remove('header-menu-close')
+						document.querySelector('.header__button').classList.remove('header-link-close');
+					}
+				};
+			} else {
+				document.querySelector('.header__button').classList.remove('header-link-close');
+			}
+		}
+	</script>
+	<script>
+		const menuOpen = document.querySelector('.profile-content-header__title').onclick = function() {
+			document.querySelector('.dropdown-profile-content').classList.toggle('dropdown-content-open');
+			if (document.querySelector('.dropdown-profile-content').classList.contains('dropdown-content-open')) {
+				document.querySelector('.profile-content-header__title').classList.add('active-title')
+				document.querySelector('body').classList.add('lock')
+			} else {
+				document.querySelector('.profile-content-header__title').classList.remove('active-title')
+				document.querySelector('body').classList.remove('lock')
+			}
+		}
+	</script>
 	<div id="popup-withdrawal" aria-hidden="true" class="popup">
 		<div class="popup__wrapper">
 			<!-- <div class="popup__content"> -->
@@ -866,7 +894,7 @@
 		</div>
 	</div>
 	</div>
-	<script src="js/app.min.js?_v=20221216141011"></script>
+	<script src="js/app.min.js?_v=20221222191644"></script>
 </body>
 
 </html>
