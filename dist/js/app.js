@@ -2889,12 +2889,9 @@
         function rangeInit() {
             const priceSlider = document.querySelector("#range");
             if (priceSlider) {
-                priceSlider.getAttribute("data-from");
-                priceSlider.getAttribute("data-to");
                 nouislider.create(priceSlider, {
                     start: [ 5e6 ],
                     connect: [ true, false ],
-                    tooltips: true,
                     range: {
                         min: [ 5e3 ],
                         max: [ 1e7 ]
@@ -2911,6 +2908,11 @@
                     if ("" != priceEnd.value) priceEndValue = priceEnd.value;
                     priceSlider.noUiSlider.set([ priceStartValue, priceEndValue ]);
                 }
+                const input0 = document.getElementById("slider-range-value");
+                const inputs = [ input0 ];
+                priceSlider.noUiSlider.on("update", (function(values, handle) {
+                    inputs[handle].value = Math.round(values[handle]);
+                }));
             }
         }
         rangeInit();
