@@ -3077,6 +3077,9 @@ body::after {
 }
 
 .menu-header-landing__link {
+  font-size: 1rem;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
   font-weight: 500;
   color: #B4B3DB;
 }
