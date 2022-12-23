@@ -3334,6 +3334,10 @@ body::after {
   background-color: #3460FE;
 }
 
+.body-content-menu__link.active-item-menu svg path {
+  fill: #FEFEFE;
+}
+
 .body-content-menu__link:hover {
   background-color: #16153C;
 }
