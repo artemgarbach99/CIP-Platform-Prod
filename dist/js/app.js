@@ -2890,7 +2890,7 @@
             const priceSlider = document.querySelector("#range");
             if (priceSlider) {
                 nouislider.create(priceSlider, {
-                    start: [ 5e6 ],
+                    start: [ 3e5 ],
                     connect: [ true, false ],
                     range: {
                         min: [ 5e3 ],
@@ -2912,6 +2912,14 @@
                 const inputs = [ input0 ];
                 priceSlider.noUiSlider.on("update", (function(values, handle) {
                     inputs[handle].value = Math.round(values[handle]);
+                }));
+                const rangeSlider01 = document.getElementById("slider-range01");
+                priceSlider.noUiSlider.on("change", (function(values, handle) {
+                    rangeSlider01.innerHTML = values[handle];
+                }));
+                const rangeSlider02 = document.getElementById("slider-range02");
+                priceSlider.noUiSlider.on("change", (function(values, handle) {
+                    rangeSlider02.innerHTML = values[handle];
                 }));
             }
         }
