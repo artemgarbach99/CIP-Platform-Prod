@@ -2914,12 +2914,14 @@
                     inputs[handle].value = Math.round(values[handle]);
                 }));
                 const rangeSlider01 = document.getElementById("slider-range01");
-                priceSlider.noUiSlider.on("change", (function(values, handle) {
-                    rangeSlider01.innerHTML = values[handle];
+                priceSlider.noUiSlider.on("update", (function(values, handle) {
+                    const calcSize = rangeSlider01.innerHTML = values[handle] / 100 * 13;
+                    rangeSlider01.innerHTML = calcSize.toFixed(2);
                 }));
                 const rangeSlider02 = document.getElementById("slider-range02");
-                priceSlider.noUiSlider.on("change", (function(values, handle) {
-                    rangeSlider02.innerHTML = values[handle];
+                priceSlider.noUiSlider.on("update", (function(values, handle) {
+                    const calcSize = rangeSlider02.innerHTML = values[handle] / 100 * 13;
+                    rangeSlider02.innerHTML = calcSize.toFixed(2);
                 }));
             }
         }
