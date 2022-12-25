@@ -6707,10 +6707,10 @@ input[type=checkbox]:checked {
   color: #FEFEFE;
   position: relative;
   min-width: 0;
-  background: -o-linear-gradient(202.05deg, rgba(7, 6, 24, 0) 7.23%, #070618 53.17%);
-  background: linear-gradient(247.95deg, rgba(7, 6, 24, 0) 7.23%, #070618 53.17%);
+  background: -o-linear-gradient(205.53deg, rgba(7, 6, 24, 0) 36.6%, #070618 58.52%);
+  background: linear-gradient(244.47deg, rgba(7, 6, 24, 0) 36.6%, #070618 58.52%);
   border-radius: 0.5rem;
-  border: 0.125rem solid #26224E;
+  border: 0.125rem solid #1E1A40;
   padding: 1.875rem;
   overflow: hidden;
 }
@@ -6721,12 +6721,16 @@ input[type=checkbox]:checked {
   line-height: 1.2916666667;
   letter-spacing: -0.03em;
   color: #FEFEFE;
+  position: relative;
+  z-index: 2;
 }
 
 .offers__cart span {
   display: block;
   color: #6A698D;
   margin-bottom: 0.625rem;
+  position: relative;
+  z-index: 2;
 }
 
 .offers__cart:hover::after {
@@ -6744,6 +6748,19 @@ input[type=checkbox]:checked {
 .offers__cart:first-child .offers__image {
   top: 1rem;
   right: 0.3125rem;
+}
+
+.offers__cart::before {
+  content: "";
+  position: absolute;
+  top: -12.5rem;
+  left: -7rem;
+  border-radius: 50%;
+  -webkit-filter: blur(128px);
+          filter: blur(128px);
+  background-color: #292855;
+  width: 19.375rem;
+  height: 19.375rem;
 }
 
 .offers__list {
@@ -6947,7 +6964,7 @@ input[type=checkbox]:checked {
   cursor: pointer;
   width: 5rem;
   height: 5rem;
-  background-color: rgba(20, 17, 45, 0.7019607843);
+  background-color: rgba(22, 19, 49, 0.2);
   color: #FEFEFE;
   display: flex;
   -webkit-box-pack: center;
@@ -6985,7 +7002,8 @@ input[type=checkbox]:checked {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 33%;
           flex: 0 1 33%;
-  background-color: rgba(20, 17, 45, 0.7019607843);
+  background-color: rgba(22, 19, 49, 0.2);
+  border: none;
   border-radius: 0.375rem;
 }
 
@@ -7002,7 +7020,7 @@ input[type=checkbox]:checked {
 }
 
 .range-first-block__row {
-  background-color: rgba(20, 17, 45, 0.7019607843);
+  background-color: rgba(22, 19, 49, 0.2);
   padding: 0.9375rem;
   border-radius: 0.375rem;
 }
