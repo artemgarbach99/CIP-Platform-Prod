@@ -6964,7 +6964,7 @@ input[type=checkbox]:checked {
   cursor: pointer;
   width: 5rem;
   height: 5rem;
-  background-color: rgba(22, 19, 49, 0.2);
+  background-color: transparent;
   color: #FEFEFE;
   display: flex;
   -webkit-box-pack: center;
@@ -6989,7 +6989,6 @@ input[type=checkbox]:checked {
       -ms-flex-pack: justify;
           justify-content: space-between;
   gap: 0.9375rem;
-  margin-top: 0.9375rem;
 }
 
 .range-first-block__input {
@@ -6998,11 +6997,11 @@ input[type=checkbox]:checked {
   line-height: 1.3076923077;
   letter-spacing: -0.02em;
   color: #FEFEFE;
-  padding: 0.625rem;
+  padding: 0.3125rem;
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 33%;
-          flex: 0 1 33%;
-  background-color: rgba(22, 19, 49, 0.2);
+      -ms-flex: 0 1 20%;
+          flex: 0 1 20%;
+  background-color: transparent;
   border: none;
   border-radius: 0.375rem;
 }
@@ -7020,8 +7019,8 @@ input[type=checkbox]:checked {
 }
 
 .range-first-block__row {
-  background-color: rgba(22, 19, 49, 0.2);
-  padding: 0.9375rem;
+  background-color: transparent;
+  padding: 0.625rem 0.9375rem;
   border-radius: 0.375rem;
 }
 
@@ -7095,17 +7094,54 @@ input[type=checkbox]:checked {
   height: 100%;
   top: 0;
   left: 0;
-  -webkit-transform: translate(-6.0625rem, 0px);
-      -ms-transform: translate(-6.0625rem, 0px);
-          transform: translate(-6.0625rem, 0px);
-  background: -webkit-gradient(linear, right top, left bottom, color-stop(50%, #0A091E), color-stop(52%, rgba(0, 0, 0, 0)));
-  background: -o-linear-gradient(top right, #0A091E 50%, rgba(0, 0, 0, 0) 52%);
-  background: linear-gradient(to bottom left, #0A091E 50%, rgba(0, 0, 0, 0) 52%);
-  border-radius: 0.5rem 0.5rem 1.25rem 0.5rem;
+  -webkit-transform: translate(-6.25rem, 0px);
+      -ms-transform: translate(-6.25rem, 0px);
+          transform: translate(-6.25rem, 0px);
+  background-color: #FEFEFE;
+  background: -webkit-gradient(linear, right top, left bottom, color-stop(50%, rgba(41, 40, 85, 0.3)), color-stop(52%, rgba(0, 0, 0, 0)));
+  background: -o-linear-gradient(top right, rgba(41, 40, 85, 0.3) 50%, rgba(0, 0, 0, 0) 52%);
+  background: linear-gradient(to bottom left, rgba(41, 40, 85, 0.3) 50%, rgba(0, 0, 0, 0) 52%);
+  border-radius: 0.5rem 0.5rem 0.25rem 0.5rem;
+  overflow: hidden;
+}
+
+.second-block-deposit__ellipse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.second-block-deposit__ellipse::before {
+  content: "";
+  position: absolute;
+  width: 19.375rem;
+  height: 19.375rem;
+  top: -7.5rem;
+  left: -7.5rem;
+  background: #292855;
+  -webkit-filter: blur(128px);
+          filter: blur(128px);
+  border-radius: 50%;
+}
+
+.second-block-deposit__ellipse::after {
+  content: "";
+  position: absolute;
+  width: 19.375rem;
+  height: 19.375rem;
+  bottom: -6.25rem;
+  left: -7.5rem;
+  background: #292855;
+  -webkit-filter: blur(128px);
+          filter: blur(128px);
+  border-radius: 50%;
 }
 
 .second-block-deposit__body {
-  width: 21.875rem;
+  width: 23.125rem;
 }
 
 .second-block-deposit__content {
@@ -7128,7 +7164,7 @@ input[type=checkbox]:checked {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 1.875rem;
+  gap: 4.0625rem;
 }
 
 .second-block-deposit__column {
@@ -7154,6 +7190,7 @@ input[type=checkbox]:checked {
   line-height: 1.4666666667;
   letter-spacing: -0.02em;
   color: #FEFEFE;
+  white-space: nowrap;
 }
 
 .second-block-deposit__value {
@@ -7213,6 +7250,7 @@ input[type=checkbox]:checked {
   width: 100%;
   background-color: #3460FE;
   margin-top: 1.875rem;
+  border-radius: 0.25rem;
 }
 
 .partners {
@@ -8850,6 +8888,10 @@ input[type=checkbox]:checked {
     display: none;
   }
 
+  .second-block-deposit__ellipse {
+    display: none;
+  }
+
   .stats__img {
     display: none;
   }
@@ -9693,8 +9735,8 @@ input[type=checkbox]:checked {
             flex: 0 1 50%;
   }
 
-  .second-block-deposit__title {
-    white-space: nowrap;
+  .second-block-deposit__row {
+    gap: 1.5625rem;
   }
 
   .no-webp .stats._about{
