@@ -6861,6 +6861,7 @@ input[type=checkbox]:checked {
   -webkit-transform: skewX(-12deg);
       -ms-transform: skewX(-12deg);
           transform: skewX(-12deg);
+  width: 26.25rem;
 }
 
 .first-block-deposit__header {
@@ -8889,6 +8890,7 @@ input[type=checkbox]:checked {
     -webkit-transform: skewX(0deg);
         -ms-transform: skewX(0deg);
             transform: skewX(0deg);
+    width: auto;
   }
 
   .first-block-deposit__header {
