@@ -7281,13 +7281,23 @@ input[type=checkbox]:checked {
   color: #FEFEFE;
 }
 
-.no-webp .stats{
-  background: url("../img/stats/bg.png") right/cover no-repeat; }
-
 .stats {
   padding: 8.125rem 0;
   position: relative;
   overflow: hidden;
+}
+
+.no-webp .stats::before{
+  background: url("../img/stats/bg.png") top right no-repeat; }
+
+.stats::before {
+  content: "";
+  mix-blend-mode: luminosity;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 .no-webp .stats._about{
@@ -7295,11 +7305,13 @@ input[type=checkbox]:checked {
 
 .stats__body {
   width: 38.875rem;
+  position: relative;
+  z-index: 2;
 }
 
 .stats__title {
   color: #FEFEFE;
-  margin-bottom: 5.3125rem;
+  margin-bottom: 5.9375rem;
 }
 
 .stats__title span {
@@ -7357,6 +7369,8 @@ input[type=checkbox]:checked {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   gap: 0.3125rem;
   margin-top: 3.4375rem;
   padding: 0.9375rem 1.875rem;
@@ -9233,12 +9247,16 @@ input[type=checkbox]:checked {
     padding-bottom: 4rem;
   }
 
-  .no-webp .stats{
-    background: url("../img/stats/bg.png") center/cover no-repeat; }
-
   .stats {
     padding-top: 0.625rem;
     padding-bottom: 4rem;
+  }
+
+  .no-webp .stats::before{
+    background: url("../img/stats/bg.png") 60%/cover no-repeat; }
+
+  .stats::before {
+    content: "";
   }
 
   .login__image-ibg {
@@ -10199,7 +10217,7 @@ input[type=checkbox]:checked {
 
 .webp .investing::before{ background: url(../img/investing/main.webp) 0 0/100% 100% no-repeat; }
 
-.webp .stats{ background: url(../img/stats/bg.webp) right/cover no-repeat; }
+.webp .stats::before{ background: url(../img/stats/bg.webp) top right no-repeat; }
 
 .webp .stats._about{ background: url(../img/about/stats.webp) right/cover no-repeat; }
 
@@ -10209,7 +10227,7 @@ input[type=checkbox]:checked {
 
 @media (max-width: 61.99875em){
 
-  .webp .stats{ background: url(../img/stats/bg.webp) center/cover no-repeat; }
+  .webp .stats::before{ background: url(../img/stats/bg.webp) 60%/cover no-repeat; }
 }
 
 @media (max-width: 61.99875em){
