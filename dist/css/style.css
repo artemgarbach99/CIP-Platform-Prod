@@ -6948,7 +6948,6 @@ input[type=checkbox]:checked {
 }
 
 .options-first-block__label {
-  font-family: "Onest";
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6973,7 +6972,6 @@ input[type=checkbox]:checked {
 }
 
 .options-first-block__text {
-  font-family: "Onest";
   font-weight: 700;
 }
 
