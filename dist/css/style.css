@@ -7442,32 +7442,23 @@ input[type=checkbox]:checked {
 
 .contacts__main {
   position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
 }
 
 .first-block-contacts {
-  background-color: #3345EE;
+  background: -o-linear-gradient(344.32deg, #1F47D1 0%, #3345EE 47.13%, #2A31A7 75.07%, #15136B 105.21%);
+  background: linear-gradient(105.68deg, #1F47D1 0%, #3345EE 47.13%, #2A31A7 75.07%, #15136B 105.21%);
   border-radius: 0.5rem;
   padding: 3rem 4rem;
-  width: 50.6426735219%;
+  width: 59.2116538132%;
+  -webkit-transform: skewX(8deg);
+      -ms-transform: skewX(8deg);
+          transform: skewX(8deg);
+  margin-left: -2.5rem;
+  padding-left: 6.5625rem;
   position: relative;
   z-index: 2;
-}
-
-.first-block-contacts::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 6.25rem;
-  height: 100%;
-  top: 0;
-  right: 0;
-  -webkit-transform: translate(6rem, 0px);
-      -ms-transform: translate(6rem, 0px);
-          transform: translate(6rem, 0px);
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(50%, #3345EE), color-stop(52%, rgba(0, 0, 0, 0)));
-  background: -o-linear-gradient(bottom left, #3345EE 50%, rgba(0, 0, 0, 0) 52%);
-  background: linear-gradient(to top right, #3345EE 50%, rgba(0, 0, 0, 0) 52%);
-  border-radius: 1.25rem 0rem 0.5rem 0rem;
 }
 
 .first-block-contacts__body {
@@ -7480,6 +7471,10 @@ input[type=checkbox]:checked {
           flex-direction: column;
   gap: 2rem;
   width: 100%;
+  -webkit-transform: skewX(-8deg);
+      -ms-transform: skewX(-8deg);
+          transform: skewX(-8deg);
+  width: 27.625rem;
 }
 
 .first-block-contacts__title {
@@ -7512,7 +7507,7 @@ input[type=checkbox]:checked {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0.25rem;
-  background-color: rgba(20, 17, 45, 0.7);
+  background-color: rgba(22, 19, 49, 0.2);
 }
 
 .first-block-contacts__item label {
@@ -7641,7 +7636,7 @@ input[type=checkbox]:checked {
   background-color: #0A091E;
   border-radius: 0.5rem;
   position: absolute;
-  top: 1.125rem;
+  top: 1.75rem;
   right: 0;
   z-index: 1;
 }
@@ -8930,10 +8925,17 @@ input[type=checkbox]:checked {
   .first-block-contacts {
     width: 50%;
     padding: 2rem 1.5rem;
+    margin-left: 0;
+    -webkit-transform: skewX(0deg);
+        -ms-transform: skewX(0deg);
+            transform: skewX(0deg);
   }
 
-  .first-block-contacts::after {
-    display: none;
+  .first-block-contacts__body {
+    -webkit-transform: skewX(0deg);
+        -ms-transform: skewX(0deg);
+            transform: skewX(0deg);
+    width: 100%;
   }
 
   .first-block-contacts__bottom {
