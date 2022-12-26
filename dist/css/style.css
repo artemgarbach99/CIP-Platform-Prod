@@ -6833,37 +6833,34 @@ input[type=checkbox]:checked {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  padding-bottom: 4.6875rem;
 }
 
 .first-block-deposit {
-  background-color: #1F47D1;
-  border-radius: 0.5rem 0.5rem 0rem 0.5rem;
+  background: -o-linear-gradient(345.45deg, #1F47D1 0%, #3345EE 47.92%, #2A31A7 76.34%, #15136B 106.99%);
+  background: linear-gradient(104.55deg, #1F47D1 0%, #3345EE 47.92%, #2A31A7 76.34%, #15136B 106.99%);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 4rem;
-  width: 50.6426735219%;
+  padding-left: 7.5rem;
+  width: 59.2116538132%;
+  margin-left: -3.75rem;
   position: relative;
   z-index: 2;
   padding-bottom: 1.875rem;
-}
-
-.first-block-deposit::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 6.25rem;
-  height: 100%;
-  top: 0;
-  right: 0;
-  -webkit-transform: translate(6.25rem, 0px);
-      -ms-transform: translate(6.25rem, 0px);
-          transform: translate(6.25rem, 0px);
-  background-color: #1F47D1;
-  -webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
-          clip-path: polygon(0 0, 0% 100%, 100% 100%);
-  border-radius: 0.5rem 0rem 0.5rem 0rem;
+  -webkit-transform: skewX(12deg);
+      -ms-transform: skewX(12deg);
+          transform: skewX(12deg);
+  border-radius: 0.5rem;
 }
 
 .first-block-deposit__body {
   color: #FEFEFE;
+  -webkit-transform: skewX(-12deg);
+      -ms-transform: skewX(-12deg);
+          transform: skewX(-12deg);
 }
 
 .first-block-deposit__header {
@@ -8876,14 +8873,22 @@ input[type=checkbox]:checked {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding-bottom: 0;
   }
 
   .first-block-deposit {
     width: 100%;
+    margin-left: 0;
+    -webkit-transform: skewX(0deg);
+        -ms-transform: skewX(0deg);
+            transform: skewX(0deg);
+    padding: 4rem;
   }
 
-  .first-block-deposit::after {
-    display: none;
+  .first-block-deposit__body {
+    -webkit-transform: skewX(0deg);
+        -ms-transform: skewX(0deg);
+            transform: skewX(0deg);
   }
 
   .first-block-deposit__header {
