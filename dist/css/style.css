@@ -7288,8 +7288,15 @@ input[type=checkbox]:checked {
   left: 0;
 }
 
-.stats._about {
+.stats._about::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
   background: url("../img/about/stats.png") right/cover no-repeat;
+  mix-blend-mode: normal;
 }
 
 .stats__body {
@@ -9766,8 +9773,9 @@ input[type=checkbox]:checked {
     gap: 1.5625rem;
   }
 
-  .stats._about {
-    background: url("../img/about/stats.png") center/cover no-repeat;
+  .stats._about::before {
+    content: "";
+    background: url("../img/about/stats.png") 45%/cover no-repeat;
   }
 
   .stats__body {
